@@ -19,28 +19,22 @@
     </header>
 
     <div class="list-container">
-
       <div class="todo-container">
         <div class="todo-wrapper">
           <div class="todo-header">
             <textarea class="todo-name">やることリスト</textarea>
           </div>
-          <div class="todo-items">
-            <div class="todo-item">
-              <span class="todo-item-name">リスト1</span>
-            </div>
-            <div class="todo-item">
-              <span class="todo-item-name">リスト1</span>
-            </div>
+          <div class="todo-items add-todo" id="todo-items">
+
           </div>
           <div class="add-container">
-            <div class="add">
-              <span class="add-name" id="add-name">+ カードを追加</span>
+            <div class="add" id="add">
+              <span class="add-name"></span> + カードを追加</span>
             </div>
           </div>
         </div>
 
-        <div class="edit-container active">
+        <div class="edit-container " id="edit">
           <div class="edit-wrapper">
             <div class="edit-title-container">
               <div class="edit-title">タイトル</div>
@@ -48,46 +42,24 @@
             </div>
             <div class="edit-main-container">
               <div class="edit-main">本文</div>
-              <textarea class="edit-main-value">リスト１リスト１リスト１リスト１</textarea>
+              <textarea class="edit-main-value">本文</textarea>
             </div>
+            <input type="datetime-local" name="schedule" min="2000-01-01T00:00"   max="2100-12-31T23:59" class="edit-date">
             <div class="edit-btn-container">
-              <button class="edit-move-btn">移動</button>
-              <button class="edit-delete-btn">削除</button>
-              <button class="edit-close-btn">閉じる</button>
+              <button class="edit-form-btn todo-comp">完了</button>
+              <button class="edit-form-btn todo-save">保存</button>
+              <button class="edit-form-btn todo-remove" >削除</button>
+              <button class="edit-form-btn" id="close">閉じる</button>
             </div>
           </div>
         </div>
       </div>
-
-
-
-      <div class="todo-container">
-        <div class="todo-wrapper">
-          <div class="todo-header">
-            <textarea class="todo-name">Done</textarea>
-          </div>
-          <div class="todo-items">
-            <div class="todo-item">
-              <span class="todo-item-name">リスト1</span>
-            </div>
-            <div class="todo-item">
-              <span class="todo-item-name">リスト1</span>
-            </div>
-          </div>
-          <div class="add-container">
-            <div class="add">
-              <span class="add-name">+ カードを追加</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
     </div>
   </div>
+
+
+
+
   <script src="main.js"></script>
 </body>
 </html>
