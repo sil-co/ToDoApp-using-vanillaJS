@@ -24,7 +24,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* cursor: pointer; */
 }
 
 .header-container .header .header-item .header-name {
@@ -34,12 +33,6 @@ body {
   color: #007bff;
 }
 
-/*
-  PC基準で実装
-  PC : 1025px以上
-  Tablet : 600以上 1024px以下 [max-width]
-  Mobile : 599px以下 [max-width]
-*/
 .list-container {
   width: 100%;
   height: 100vh;
@@ -144,7 +137,6 @@ body {
   color: white;
   background-color: transparent;
   font-size: 8px;
-  /* cursor: pointer; */
 }
 
 .todo-items .completed {

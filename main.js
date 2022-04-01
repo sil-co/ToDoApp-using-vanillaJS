@@ -1,4 +1,4 @@
-// DOM
+// 使用するDOM
 const todoItems = document.getElementsByClassName("todo-items");
 const todoItems2 = document.querySelector(".todo-items");
 const todoItemName = document.getElementsByClassName("todo-item-name");
@@ -16,7 +16,7 @@ const closeButton = document.querySelector("#close");
 const todoComp = document.querySelector(".todo-comp");
 
 // global変数
-let jsonTodoData;
+let jsonTodoData;  // To Do Listのデータ
 let dataId;
 
 // html文字列をnode形式に変換する関数
@@ -26,14 +26,7 @@ function createElementFromHTML(html) {
   return newDiv.firstElementChild;
 }
 
-// 要素をdivで囲んで返す関数
-function divElementFromHTML(html) {
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML = html;
-  return newDiv;
-}
-
-// データ取得関数
+// データを取得し描画する関数
 function getData() {
   jsonTodoData = localStorage.getItem("Todo");
   if (jsonTodoData === null) {
@@ -44,7 +37,6 @@ function getData() {
         date: "",
         comp: false
       },
-
     ];
     jsonTodoData = JSON.stringify(jsonTodoData);
     localStorage.setItem("Todo", jsonTodoData);
@@ -52,7 +44,6 @@ function getData() {
   jsonTodoData = JSON.parse(jsonTodoData);
   const jsonLen = Object.keys(jsonTodoData).length;
   console.log(jsonLen);
-  // console.log(jsonTodoData.length);
   for(let i = 0; i < jsonLen; i++) {
     const jsonTitle = jsonTodoData[i].title;
     const jsonMain = jsonTodoData[i].main;
@@ -68,11 +59,10 @@ function getData() {
       editDate.value = jsonDate;
       dataId = i;
     });
-
   }
 }
 
-// load後 data取得
+// load後 data取得し描画
 window.addEventListener("load", getData);
 
 // add card method
@@ -107,9 +97,7 @@ todoRemove.addEventListener("click", function() {
   jsonTodoData.splice(dataId, 1);
   const saveJsonData = JSON.stringify(jsonTodoData);
   localStorage.setItem("Todo", saveJsonData);
-  // todoItemsId.removeChild(todoItems2);
   todoItemsId.innerHTML = '';
-  // alert("削除しました。");
   getData();
   editContainer.classList.remove("active");
 });
@@ -127,7 +115,6 @@ todoSave.addEventListener("click", function() {
   const saveJsonData = JSON.stringify(jsonTodoData);
   localStorage.setItem("Todo",saveJsonData);
   todoItemsId.innerHTML = '';
-  // alert('保存しました。');
   getData();
   editContainer.classList.remove("active");
 });
