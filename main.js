@@ -1,19 +1,32 @@
+
+// dom取得関数
+function getDom(attrName, all = false) {
+  let dom;
+  if(all) {
+    dom = document.querySelectorAll(attrName);
+  } else {
+    dom = document.querySelector(attrName);
+  }
+  return dom;
+}
+
 // 使用するDOM
 const todoItems = document.getElementsByClassName("todo-items");
-const todoItems2 = document.querySelector(".todo-items");
+const todoItems2 =getDom(".todo-items");
 const todoItemName = document.getElementsByClassName("todo-item-name");
 const todoItem = document.getElementsByClassName("todo-item");
-const editContainer = document.querySelector("#edit");
+const editContainer =getDom("#edit");
 const todoDate = document.getElementsByClassName("todo-date");
-const editTitleValue = document.querySelector(".edit-title-value");
-const editMainValue = document.querySelector(".edit-main-value");
-const editDate = document.querySelector(".edit-date");
-const btn = document.querySelector("#add");
-const todoRemove = document.querySelector(".todo-remove");
-const todoSave = document.querySelector(".todo-save");
+const editTitleValue =getDom(".edit-title-value");
+const editMainValue =getDom(".edit-main-value");
+const editDate =getDom(".edit-date");
+const btn =getDom("#add");
+const todoRemove =getDom(".todo-remove");
+const todoSave =getDom(".todo-save");
 const todoItemsId = document.getElementById("todo-items");
-const closeButton = document.querySelector("#close");
-const todoComp = document.querySelector(".todo-comp");
+const closeButton =getDom("#close");
+const todoComp =getDom(".todo-comp");
+
 
 // global変数
 let jsonTodoData;  // To Do Listのデータ
